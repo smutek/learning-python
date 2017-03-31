@@ -10,9 +10,16 @@ def help_messages():
 
 
 # show the list
-def show_list(x):
-    for list_item in x:
-        print(list_item)
+def show_list():
+    for item in shopping_list:
+        print(item)
+
+
+# add to list
+def add_to_list(new_item):
+    shopping_list.append(new_item)
+    print("Added {}. List now has {} items.".format(new_item, len(shopping_list)))
+
 
 # print instructions
 help_messages()
@@ -26,12 +33,13 @@ while True:
     if new_item == "DONE":
         break
     elif new_item == "SHOW":
-        show_list(shopping_list)
+        show_list()
+        continue
     elif new_item == "HELP":
         help_messages()
-    else:
-        # add to list
-        shopping_list.append(new_item)
+        continue
+    # add to list
+    add_to_list(new_item)
 
 # print list
-show_list(shopping_list)
+show_list()
