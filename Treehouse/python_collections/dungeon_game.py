@@ -1,6 +1,4 @@
 import random
-import tkinter
-
 
 # draw a grid
 
@@ -57,7 +55,7 @@ def move_player(player, move):
     elif move == "UP":
         y = y - 1
     # if move == DOWN, y+1
-    elif move == "LEFT":
+    elif move == "DOWN":
         y = y + 1
 
     player = x, y
