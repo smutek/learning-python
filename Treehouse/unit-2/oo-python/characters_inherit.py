@@ -1,5 +1,6 @@
 import random
 
+
 # Super Class
 # The super() function lets us call a bit of code from the parent class
 # inside our own class. This is really helpful when you need to override
@@ -20,7 +21,6 @@ class Character:
 
 
 class Thief(Character):
-
     def __init__(self, name, sneaky=True, **kwargs):
         super().__init__(name, **kwargs)
         self.sneaky = sneaky
@@ -30,3 +30,18 @@ class Thief(Character):
 
     def hide(self, light_level):
         return self.sneaky and light_level < 10
+
+
+class Inventory:
+    def __init__(self):
+        self.slots = []
+
+    def add_item(self, item):
+        self.slots.append(item)
+
+
+class SortedInventory(Inventory):
+
+    def add_item(self, item):
+        super().add_item(item)
+        self.slots.sort()
