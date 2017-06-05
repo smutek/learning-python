@@ -1,5 +1,8 @@
 import os
 import random
+import logging
+
+logging.basicConfig(filename='game.log', level=logging.DEBUG)
 
 # Dungeon game - Treehouse solution
 
@@ -108,6 +111,7 @@ def game_loop():
     # into the variables
     monster, door, player = get_locations()
     playing = True
+    logging.info('monster: {}; player: {}; door: {}'.format(monster, door, player))
 
     while playing:
 
